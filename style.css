@@ -1,0 +1,23 @@
+body {
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+h4, p {
+    margin: 0;
+}
+
+.myrow {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.mycol {
+    width: calc((100% - 50px)/3);
+    position: relative;
+}
+
+.mycol img {
+    width: 130px;
+    height: auto;
+}
