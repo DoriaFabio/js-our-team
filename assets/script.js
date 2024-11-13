@@ -45,3 +45,20 @@ const teamMembers = [
     img: "./img/female3.png"
   }
 ];
+
+let template = "";
+const teamContainer = document.querySelector(".myrow");
+for(let value of teamMembers) {
+  template += `
+    <div class="mycol text-white bg-black d-flex wrap">
+      <img src="${value.img}" alt="${value.name}">
+      <div class="ms-3 d-flex flex-column justify-content-center">
+        <h4 class="fw-bold">${value.name}</h4>
+        <p>${value.role}</p>
+        <a class="text-info">${value.email}</a>
+      </div>
+    </div> 
+  `;
+}
+teamContainer.innerHTML = template;
+

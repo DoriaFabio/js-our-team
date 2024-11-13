@@ -6,6 +6,11 @@ h4, p {
     margin: 0;
 }
 
+.mycontainer {
+    margin: 0 auto;
+    max-width: 1000px;
+}
+
 .myrow {
     display: flex;
     gap: 25px;
