@@ -46,6 +46,14 @@ const teamMembers = [
   }
 ];
 
+const form = document.querySelector("form");
+const button= document.querySelector("button");
+const nome = document.getElementById('name').value;
+const role = document.getElementById('role').value;
+const image = document.getElementById('image').value;
+const email = document.getElementById('email').value;
+
+
 let template = "";
 const teamContainer = document.querySelector(".myrow");
 for(let value of teamMembers) {
@@ -61,4 +69,16 @@ for(let value of teamMembers) {
   `;
 }
 teamContainer.innerHTML = template;
+
+form.addEventListener("submit", function (event) {
+  event.preventDefault();
+  const newMembers = {
+    name: nome,
+    role: role,
+    email: email,
+    img: image
+  }
+  teamMembers.push(newMembers);
+  console.log(teamMembers);
+});
 

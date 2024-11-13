@@ -15,6 +15,7 @@ h4, p {
     display: flex;
     gap: 25px;
     flex-wrap: wrap;
+    width: 100%;
 }
 
 .mycol {
@@ -25,4 +26,37 @@ h4, p {
 .mycol img {
     width: 130px;
     height: auto;
+}
+
+
+@media  screen and (max-width: 768px) {
+    .mycol {
+        width: calc((100% - 30px)/2);
+        position: relative;
+    }
+
+    .myrow {
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+    .myrow a {
+        font-size: 10px;
+    }
+}
+
+@media  screen and (max-width: 480px) {
+    .mycol {
+        width: calc((100% - 30px));
+        position: relative;
+    }
+
+    .myrow {
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+    .myrow {
+        font-size: 10px;
+    }
 }
