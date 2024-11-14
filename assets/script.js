@@ -47,38 +47,44 @@ const teamMembers = [
 ];
 
 const form = document.querySelector("form");
-const button= document.querySelector("button");
-const nome = document.getElementById('name').value;
-const role = document.getElementById('role').value;
-const image = document.getElementById('image').value;
-const email = document.getElementById('email').value;
-
-
-let template = "";
-const teamContainer = document.querySelector(".myrow");
-for(let value of teamMembers) {
-  template += `
-    <div class="mycol text-white bg-black d-flex wrap">
-      <img src="${value.img}" alt="${value.name}">
-      <div class="ms-3 d-flex flex-column justify-content-center">
-        <h4 class="fw-bold">${value.name}</h4>
-        <p>${value.role}</p>
-        <a class="text-info">${value.email}</a>
-      </div>
-    </div> 
-  `;
-}
-teamContainer.innerHTML = template;
+const button = document.querySelector("button");
 
 form.addEventListener("submit", function (event) {
   event.preventDefault();
+  event.stopPropagation();
+  const nome = document.getElementById('name').value;
+  const role = document.getElementById('role').value;
+  const img = document.getElementById('image').value;
+  const email = document.getElementById('email').value;
   const newMembers = {
     name: nome,
     role: role,
     email: email,
-    img: image
+    img: img
   }
   teamMembers.push(newMembers);
   console.log(teamMembers);
+  drawCard();
 });
+
+function drawCard() {
+  let template = "";
+  const teamContainer = document.querySelector(".myrow");
+  for (let value of teamMembers) {
+    template += `
+      <div class="mycol text-white bg-black d-flex wrap">
+        <img src="${value.img}" alt="${value.name}">
+        <div class="ms-3 d-flex flex-column justify-content-center">
+          <h4 class="fw-bold">${value.name}</h4>
+          <p>${value.role}</p>
+          <a class="text-info">${value.email}</a>
+        </div>
+      </div> 
+    `;
+  }
+  teamContainer.innerHTML = template;
+}
+
+drawCard();
+
 

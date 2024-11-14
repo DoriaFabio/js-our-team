@@ -28,6 +28,9 @@ h4, p {
     height: auto;
 }
 
+a {
+    cursor: pointer;
+}
 
 @media  screen and (max-width: 768px) {
     .mycol {
